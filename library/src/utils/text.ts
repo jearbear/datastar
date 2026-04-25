@@ -69,11 +69,7 @@ export const modifyCasing = (
   return str
 }
 
-export const aliasify = (name: string) =>
-  ALIAS ? `data-${ALIAS}-${name}` : `data-${name}`
-
-export const unaliasify = (name: string) => {
-  if (!ALIAS) return name
-  if (!name.startsWith(`${ALIAS}-`)) return null
-  return name.slice(ALIAS.length + 1)
-}
+// PATCH: It's not clear to me where I should be defining an alias, but I don't
+// use this feature so I just removed it.
+export const aliasify = (name: string) => name
+export const unaliasify = (name: string) => name

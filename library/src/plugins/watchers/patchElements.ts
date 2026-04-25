@@ -615,6 +615,12 @@ const morphNode = (
       if (
         oldElt.getAttribute('value') !== newValue &&
         !preserveAttrs.includes('value')
+        // PATCH: I can't think of a use case for patching the user's focused
+        // input, so I think a better default is disabling that. This is
+        // impossible to do without framework support because even if the
+        // backend is told which fields to avoid patching, the focused input
+        // could have changed by the time the response is received.
+        && oldElt !== document.activeElement
       ) {
         oldElt.value = newValue ?? ''
         shouldDispatchPropChangeEvent = true

@@ -5,3 +5,5 @@ bundles/datastar-pro*
 library/src/bundles/datastar-pro*
 library/src/plugins/pro
 node_modules
+.direnv
+library/dist
