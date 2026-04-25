@@ -71,5 +71,5 @@ export const modifyCasing = (
 
 // PATCH: It's not clear to me where I should be defining an alias, but I don't
 // use this feature so I just removed it.
-export const aliasify = (name: string) => name
+export const aliasify = (name: string) => `data-${name}`
 export const unaliasify = (name: string) => name
